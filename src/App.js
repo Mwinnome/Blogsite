@@ -4,6 +4,7 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import Blog from './pages/Blog'
 import About from './pages/About'
 import BlogList from "./pages/Blog/blogs"
+import BlogDetails from "./pages/Blog/detail"
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
     </Route>
     <Route path='/about' element={<About/>}/>
     <Route path='*' element={<Navigate to="/"/>}/>
-    
+    <Route path=':blog' element={<BlogDetails/>}/>
     
     </Routes>
   )
