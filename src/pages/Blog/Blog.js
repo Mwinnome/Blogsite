@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
-import { Navigate, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 function BlogList(){
-    const negavigate =useNavigate()
+    const navigate =useNavigate()
     const [posts, setPosts] = useState([])
 
     useEffect(()=>{
@@ -15,7 +15,7 @@ function BlogList(){
 
     const handleClick =(id)=>{
         const post = posts[id-1];
-        Navigate(`/blog/${post.slug}`, {state: {post}})
+        navigate(`/blog/${post.slug}`, {state: {post}})
     }
     return(
         <div>
