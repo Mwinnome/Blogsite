@@ -2,15 +2,15 @@ import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 function BlogList(){
-    const navigate =useNavigate()
-    const [posts, setPosts] = useState([])
+    const navigate =useNavigate();
+    const [posts, setPosts] = useState([]);
 
     useEffect(()=>{
         (async ()=>{
             let res = await fetch("/posts.json");
-            setPosts(await res.json())
-        })()
-    },[])
+            setPosts(await res.json());
+        })();
+    },[]);
  
 
     const handleClick =(id)=>{
@@ -23,7 +23,7 @@ function BlogList(){
         {
             posts.map((post)=>(
                 <div key={post.id} 
-                style={{display: "flex", margin: "20p 0"}}>
+                style={{display: "flex", margin: "20px 0"}}>
                 <img src={`/images/${post.image}`}
                 alt = "" height={200} width={200}/>
                 
